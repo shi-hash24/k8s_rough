@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multicon-pod
+spec:
+  containers:
+    - name: cont1
+      image: tomcat:8
+    - name: cont2
+      image: nginx
+    - name: cont3
+      image: redis
