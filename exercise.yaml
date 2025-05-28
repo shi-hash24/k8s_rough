@@ -1,0 +1,18 @@
+# Write a pod with two containers n1 and n2. N1 being tomcat:8 and n2 being centos:7 with sleep set to 1800 and a env variable of env1=value1 and verify if env variable is set in centos:7 container.
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+    - name: n1
+      image: tomcat:8
+    - name: n2
+      image: centos:7
+      command: ["sleep", "1800"]
+      env:
+        - name: env1
+          value: value1
+# To check env-variables run cmd
+# kubectl exec my-pod -c n2 -- printenv | grep env1
