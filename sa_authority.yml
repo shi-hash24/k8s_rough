@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: myserviceaccount
+  namespace: default
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp
+spec:
+  serviceAccountName: myserviceaccount
+  containers:
+    - name: myapp
+      image: amazon/aws-cli
+      command: [/bin/sh, -c, "sleep 3600"]
