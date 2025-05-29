@@ -16,3 +16,4 @@ spec:
           value: value1
 # To check env-variables run cmd
 # kubectl exec my-pod -c n2 -- printenv | grep env1
+# o/p: env1=value1
