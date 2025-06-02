@@ -8,6 +8,10 @@ kind: Pod
 metadata:
   namespace: playns
   name: playpod
+  labels:
+    app: newapps
+    env: dev
+    client: abc
 spec:
   containers:
     - name: ubuntu
